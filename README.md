@@ -24,11 +24,11 @@
 | item_info                         | text       | null: false                    |
 | category_id                       | integer    | null: false                    |
 | condition_id                      | integer    | null: false                    |
-| shipping_fee_responsibility_id    | integer    | null: false                    |
+| prefecture_id                     | integer    | null: false                    |
 | origin_region_id                  | integer    | null: false                    |
 | days_until_shipping_id            | integer    | null: false                    |
 | sell_price                        | integer    | null: false                    |
-| user                              | reference  | null: false, foreign_key: true |
+| user                              | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -39,8 +39,8 @@
 
 | Column              | Type       | Options                        |
 | ------              | ---------- | ------------------------------ |
-| user                | reference  | null: false, foreign_key: true |
-| item                | reference  | null: false, foreign_key: true |
+| user                | references | null: false, foreign_key: true |
+| item                | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -52,13 +52,13 @@
 
 | Column              | Type       | Options                        |
 | ------              | ---------- | ------------------------------ |
-| postal_code         | integer    | null: false                    |
-| prefecture          | integer    | null: false                    |
+| postal_code         | string     | null: false                    |
+| prefecture_id       | integer    | null: false                    |
 | city                | string     | null: false                    |
 | house_number        | string     | null: false                    |
 | building_name       | string     |                                |
 | phone_number        | string     | null: false                    |
-| order               | reference  | null: false, foreign_key: true |
+| order               | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :order
