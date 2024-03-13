@@ -9,14 +9,11 @@
 | first_name          | string     | null: false                    |
 | last_name_kana      | string     | null: false                    |
 | first_name_kana     | string     | null: false                    |
-| birth_year          | integer    | null: false                    |
-| birth_month         | integer    | null: false                    |
-| birth_day           | integer    | null: false                    |
+| birthdate           | date       | null: false                    |
 
 ### Association
 - has_many :items
 - has_many :orders
-- has_one :shipping_address
 
 
 ## itemsテーブル
@@ -25,11 +22,11 @@
 | ----------------------------------| ---------- | ------------------------------ |
 | item_name                         | string     | null: false                    |
 | item_info                         | text       | null: false                    |
-| category                          | integer    | null: false                    |
-| condition                         | integer    | null: false                    |
-| shipping_fee_responsibility       | integer    | null: false                    |
-| origin_region                     | integer    | null: false                    |
-| days_until_shipping               | integer    | null: false                    |
+| category_id                       | integer    | null: false                    |
+| condition_id                      | integer    | null: false                    |
+| shipping_fee_responsibility_id    | integer    | null: false                    |
+| origin_region_id                  | integer    | null: false                    |
+| days_until_shipping_id            | integer    | null: false                    |
 | sell_price                        | integer    | null: false                    |
 | user                              | reference  | null: false, foreign_key: true |
 
@@ -42,7 +39,6 @@
 
 | Column              | Type       | Options                        |
 | ------              | ---------- | ------------------------------ |
-| buy_item_price      | integer    | null: false                    |
 | user                | reference  | null: false, foreign_key: true |
 | item                | reference  | null: false, foreign_key: true |
 
@@ -61,10 +57,8 @@
 | city                | string     | null: false                    |
 | house_number        | string     | null: false                    |
 | building_name       | string     |                                |
-| phone_number        | integer    | null: false                    |
-| user                | reference  | null: false, foreign_key: true |
+| phone_number        | string     | null: false                    |
 | order               | reference  | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :user
 - belongs_to :order
