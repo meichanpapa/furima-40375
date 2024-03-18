@@ -24,8 +24,8 @@
 | item_info                         | text       | null: false                    |
 | category_id                       | integer    | null: false                    |
 | condition_id                      | integer    | null: false                    |
+| shipping_fee_responsibility_id    | integer    | null: false                    |
 | prefecture_id                     | integer    | null: false                    |
-| origin_region_id                  | integer    | null: false                    |
 | days_until_shipping_id            | integer    | null: false                    |
 | sell_price                        | integer    | null: false                    |
 | user                              | references | null: false, foreign_key: true |
