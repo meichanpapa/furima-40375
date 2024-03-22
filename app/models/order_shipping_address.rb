@@ -10,6 +10,8 @@ class OrderShippingAddress
     validates :house_number
     validates :phone_number,
               format: { with: /\A\d{10,11}\z/, message: 'is invalid. Please include 10 to 11 digits without hyphens' }
+    validates :user_id
+    validates :item_id
   end
 
   def save

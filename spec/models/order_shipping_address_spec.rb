@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe OrderShippingAddress, type: :model do
   before do
-    @order_shipping_address = FactoryBot.build(:order_shipping_address)
+    user = FactoryBot.create(:user)
+    item = FactoryBot.create(:item)
+    @order_shipping_address = FactoryBot.build(:order_shipping_address, user_id: user.id, item_id: item.id)
   end
 
   describe '商品購入情報の保存' do
@@ -70,6 +72,16 @@ RSpec.describe OrderShippingAddress, type: :model do
         @order_shipping_address.phone_number = '03-123-5678'
         @order_shipping_address.valid?
         expect(@order_shipping_address.errors.full_messages).to include('Phone number is invalid. Please include 10 to 11 digits without hyphens')
+      end
+      it 'userが紐付いていないと保存できないこと' do
+        @order_shipping_address.user_id = nil
+        @order_shipping_address.valid?
+        expect(@order_shipping_address.errors.full_messages).to include("User can't be blank")
+      end
+      it 'itemが紐付いていないと保存できないこと' do
+        @order_shipping_address.item_id = nil
+        @order_shipping_address.valid?
+        expect(@order_shipping_address.errors.full_messages).to include("Item can't be blank")
       end
     end
   end
