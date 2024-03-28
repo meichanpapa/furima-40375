@@ -205,3 +205,34 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.item-img-content {
+  display: flex;
+}
+
+.main-image {
+  margin-right: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.other-image {
+  margin-right: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.sold-out-show {
+  position: absolute;
+  top: 45%;
+  width: 78%;
+  text-align: center;
+  background-color: crimson;
+  transform: skewY(-10deg);
+}
+
+.sold-out-show>span {
+  color: #FFF;
+  font-size: 45px;
+  font: bold;
+}
