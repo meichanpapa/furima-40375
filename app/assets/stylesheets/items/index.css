@@ -308,4 +308,22 @@ a {
   font-size: 2vh;
 }
 
+.other-images {
+  display: flex;
+}
+
+.other-image {
+  margin-right: 10px;
+}
+
+.image-delete-button {
+  text-align: center;
+  border: solid 1px;
+  cursor: pointer;
+}
+
+.main-image {
+  height: 200px;
+  width: 200px;
+}
 /* //商品一覧 */

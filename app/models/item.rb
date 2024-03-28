@@ -2,14 +2,15 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
   has_one :order
-  has_one_attached :image
+  has_many_attached :images
   belongs_to :category
   belongs_to :condition
   belongs_to :shipping_fee_responsibility
   belongs_to :prefecture
   belongs_to :days_until_shipping
 
-  validates :image, presence: true
+  validates :images, presence: true
+  validates :images, length: { minimum: 1, maximum: 5, message: "は1枚以上5枚以下にしてください" }
   validates :item_name, presence: true
   validates :item_info, presence: true
   validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
