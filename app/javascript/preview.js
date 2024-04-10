@@ -30,7 +30,7 @@ function preview (){
     previewWrapper.appendChild(deleteButton);
     previewList.appendChild(previewWrapper);
     
-    previewImage.style.cssText = "width: 500px; height: 300px;";
+    previewImage.style.cssText = "width: 615px; height: 350px;";
   };
 
   const buildNewFileField = () => {
